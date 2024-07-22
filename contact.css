@@ -740,7 +740,7 @@ a {
     /* width: 1693px; */
     width: 375px;
     height: 397px;
-    left: calc(50% - 375px / 2);
+    left: calc(50% - 400px / 2);
     top: 66px;
     background-color: rgba(0, 0, 0, 0.8);
   }
