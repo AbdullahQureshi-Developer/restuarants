@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  outline: solid 1px red;
 }
 
 body {
@@ -551,6 +552,14 @@ a {
   font-size: 16px;
   line-height: 24px;
 }
+.error {
+  color: red;
+  font-size: 0.875em;
+}
+.success {
+  color: green;
+  font-size: 0.875em;
+}
 .box4-btn {
   /* Button */
 
@@ -635,16 +644,20 @@ a {
   color: #f1f8ff;
 }
 .link {
+  display: none;
+  position: fixed;
   box-sizing: border-box;
-  position: absolute;
   width: 48px;
   height: 48px;
   left: 1607px;
   bottom: 166px;
-  top: 700px;
+  top: 600px;
   background: #fea116;
   border: 1px solid #fea116;
   border-radius: 2px;
+}
+.link.show{
+  display: flex;
 }
 @media only screen and (max-width: 425px) {
   .navbar {
@@ -655,7 +668,9 @@ a {
     height: 66px;
     background-color: #0f0f1a;
   }
-
+.logo{
+  width: 50px;
+}
   .logo .icon {
     position: absolute;
     width: 160px;
@@ -740,7 +755,7 @@ a {
     /* width: 1693px; */
     width: 375px;
     height: 397px;
-    left: calc(50% - 400px / 2);
+    left: calc(50% - 375px / 2);
     top: 66px;
     background-color: rgba(0, 0, 0, 0.8);
   }
@@ -804,8 +819,20 @@ a {
     left: calc(50% - 206.42px / 2 - 0.29px);
     top: 0px;
   }
+  .group2{
+    /* position:absolute;
+    width: 1825px;
+    z-index: 2; */
+    top: 400px;
+    left: 0px;
+    width: 375px;
+  }
+  .container {
+    width: 375px;
+    left: 0px;
+  }
   .group2-h1 {
-    position: absolute;
+    /* position: absolute; */
     width: 328px;
     height: 42px;
     left: calc(50% - 328px / 2 - 0.5px);
@@ -821,23 +848,23 @@ a {
     color: #0f172b;
   }
   .box1 {
-    /* position: absolute; */
+    position: absolute;
     width: 320px;
-    left: 482px;
+    left: 20px;
     top: 130px;
     height: 72px;
   }
   .box2 {
     position: absolute;
     width: 320px;
-    left: 482px;
+    left: 20px;
     top: 220px;
     bottom: 396px;
     height: 72px;
   }
   .box3 {
     position: absolute;
-    left: 482px;
+    left: 20px;
     width: 320px;
     /* right: 150px; */
     top: 310px;
@@ -848,7 +875,7 @@ a {
 
     position: absolute;
     width: 320px;
-    left: 482px;
+    left: 20px;
     right: 23px;
     top: 430px;
     bottom: 672px;
@@ -874,7 +901,7 @@ a {
   }
   .box4 {
     top: 830px;
-    left: 450px;
+    left: 0px;
     height: 560px;
     width: 375px;
   }
@@ -937,7 +964,7 @@ a {
     position: absolute;
     width: 48px;
     height: 48px;
-    left: 940px;
+    left: 300px;
     bottom: 166px;
     top: 1385px;
     background: #fea116;
@@ -948,7 +975,7 @@ a {
     position: absolute;
     width: 385px;
     height: 112px;
-    left: calc(50% - 425px / 2);
+    left: calc(50% - 400px / 2);
     top: 1433px;
     background: #0f172b;
   }
