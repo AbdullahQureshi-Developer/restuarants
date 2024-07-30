@@ -12,15 +12,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
       let isValid = true
        let errorMessages = '';
-
       const name = document.getElementById('name').value
       const nameError = document.getElementById('nameError')
+      const namePattern =/^[A-Za-z\s]+$/ 
       if (name === '') {
-           errorMessages += 'Name is required.\n';
+        errorMessages += 'Name is required.\n'
+        isValid = false
+      } else if (!namePattern.test(name)) {
+        errorMessages += 'Name must contain only alphabetic characters.\n'
         isValid = false
       } else {
         nameError.textContent = ''
-        isValid = true
+       
       }
 
       const email = document.getElementById('email').value
@@ -34,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
         isValid = false
       } else {
         emailError.textContent = ''
-        isValid = true
       }
 
 
@@ -46,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
         isValid = false
       } else {
         messageError.textContent = ''
-        isValid = true
       }
 
       const subject = document.getElementById('subject').value
@@ -56,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
         isValid = false
       } else {
         subjectError.textContent = ''
-        isValid = true
       }
       
       const successMessage = document.getElementById('successMessage')

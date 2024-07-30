@@ -15,15 +15,19 @@ document.addEventListener('DOMContentLoaded', function () {
       let isValid = true
       let errorMessages = ''
 
+
       const name = document.getElementById('name').value
       const nameError = document.getElementById('nameError')
+      const namePattern =/^[A-Za-z\s]+$/ 
       if (name === '') {
-        errorMessages += 'Name is required \n'
-
+        errorMessages += 'Name is required.\n'
+        isValid = false
+      } else if (!namePattern.test(name)) {
+        errorMessages += 'Name must contain only alphabetic characters.\n'
         isValid = false
       } else {
         nameError.textContent = ''
-        isValid = true
+       
       }
 
       const email = document.getElementById('email').value
@@ -37,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         isValid = false
       } else {
         emailError.textContent = ''
-        isValid = true
+        
       }
 
       const date = document.getElementById('date').value
@@ -47,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         isValid = false
       } else {
         dateError.textContent = ''
-        isValid = true
+       
       }
 
       const select = document.getElementById('select').value
@@ -57,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         isValid = false
       } else {
         selectError.textContent = ''
-        isValid = true
+        
       }
 
       const message = document.getElementById('message').value
@@ -67,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
         isValid = false
       } else {
         messageError.textContent = ''
-        isValid = true
       }
 
       const successMessage = document.getElementById('successMessage')
@@ -95,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('scroll', function () {
   const scrollLink = document.getElementById('scrollLink')
-  if (window.scrollY > 200) {
+  if (window.scrollY > 150) {
     scrollLink.classList.add('show')
   } else {
     scrollLink.classList.remove('show')
